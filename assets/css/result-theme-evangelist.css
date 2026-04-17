@@ -1,0 +1,80 @@
+/* =========================================================
+   AI Evangelist (AI伝道師) — Warm Terracotta / Auditorium
+   温かい象牙、テラコッタ、人を集める光
+   ========================================================= */
+
+.theme-evangelist {
+  --rs-bg             : #F5EADC;
+  --rs-card-bg        : #FBF3E7;
+  --rs-card-hover-bg  : #F9EDDB;
+  --rs-video-bg       : #2A1914;
+
+  --rs-ink            : #2A1914;
+  --rs-ink-sub        : #5C453C;
+  --rs-ink-mute       : #9C8277;
+
+  --rs-accent         : #D06A42;
+  --rs-accent-deep    : #A64B28;
+
+  --rs-line           : rgba(42, 25, 20, 0.14);
+
+  --rs-display        : "Noto Sans JP", "Inter", sans-serif;
+  --rs-display-weight : 800;
+  --rs-display-tracking: -0.02em;
+  --rs-body           : "Noto Sans JP", "Inter", sans-serif;
+  --rs-mono           : "Inter", ui-monospace, monospace;
+
+  background: var(--rs-bg);
+  color: var(--rs-ink);
+}
+
+.theme-evangelist .result__atmos {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% -10%, rgba(208, 106, 66, 0.25) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(208, 106, 66, 0.1) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 80% 90%, rgba(42, 25, 20, 0.08) 0%, transparent 55%);
+}
+
+.theme-evangelist .result__atmos::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(208, 106, 66, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 55% 65%, rgba(208, 106, 66, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 85% 35%, rgba(208, 106, 66, 0.08) 1px, transparent 1px);
+  background-size: 200px 200px, 260px 260px, 180px 180px;
+  opacity: 0.8;
+}
+
+.theme-evangelist .result-hero__name {
+  position: relative;
+}
+.theme-evangelist .result-hero__name::after {
+  content: "";
+  display: block;
+  width: 60px; height: 4px;
+  background: var(--rs-accent);
+  margin: clamp(24px, 3vw, 36px) auto 0;
+  border-radius: 2px;
+}
+
+.theme-evangelist .result-hero__type-no {
+  background: var(--rs-accent);
+  border-color: var(--rs-accent);
+  color: var(--rs-bg);
+}
+
+.theme-evangelist .result-strength {
+  background: var(--rs-card-bg);
+}
+
+.theme-evangelist .result-cta__btn {
+  background: var(--rs-accent);
+  color: var(--rs-bg);
+  box-shadow: 0 8px 28px rgba(208, 106, 66, 0.3);
+}
+.theme-evangelist .result-cta__btn:hover {
+  background: var(--rs-accent-deep);
+  box-shadow: 0 12px 36px rgba(208, 106, 66, 0.45);
+}

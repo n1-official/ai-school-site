@@ -1,0 +1,115 @@
+/* =========================================================
+   AI Business Strategist (AIビジネス戦略家) — Architectural
+   建築的、設計図、深海のような青、上質なコーポレート
+   ========================================================= */
+
+.theme-strategist {
+  /* Surface */
+  --rs-bg             : #081318;
+  --rs-card-bg        : #0D1B22;
+  --rs-card-hover-bg  : #132530;
+  --rs-video-bg       : #050C10;
+
+  /* Ink */
+  --rs-ink            : #EDF1F4;
+  --rs-ink-sub        : #9CB2BE;
+  --rs-ink-mute       : #617682;
+
+  /* Accent — aged brass */
+  --rs-accent         : #C9A866;
+  --rs-accent-deep    : #9A7F44;
+
+  /* Line */
+  --rs-line           : rgba(237, 241, 244, 0.12);
+
+  /* Typography */
+  --rs-display        : "Inter", "Noto Sans JP", sans-serif;
+  --rs-display-weight : 700;
+  --rs-display-tracking: -0.015em;
+  --rs-body           : "Noto Sans JP", "Inter", sans-serif;
+  --rs-mono           : "JetBrains Mono", "Inter", ui-monospace, monospace;
+
+  background: var(--rs-bg);
+  color: var(--rs-ink);
+}
+
+.theme-strategist .result__atmos {
+  background:
+    radial-gradient(ellipse 80% 60% at 75% 20%, rgba(46, 155, 161, 0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(201, 168, 102, 0.08) 0%, transparent 55%),
+    linear-gradient(180deg, #081318 0%, #050D11 100%);
+}
+
+/* Blueprint grid overlay */
+.theme-strategist .result__atmos::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(237, 241, 244, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(237, 241, 244, 0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
+}
+
+/* Compass-like marks */
+.theme-strategist .result__atmos::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 1200px; height: 1200px;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(201, 168, 102, 0.06);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.theme-strategist .result-hero__name {
+  position: relative;
+}
+.theme-strategist .result-hero__name::before {
+  content: "N";
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  letter-spacing: 0.4em;
+  color: var(--rs-accent);
+  font-family: var(--rs-mono);
+}
+
+.theme-strategist .result-hero__type-no {
+  border-color: var(--rs-accent);
+  color: var(--rs-accent);
+}
+
+.theme-strategist .result-strength {
+  background: var(--rs-card-bg);
+  position: relative;
+}
+.theme-strategist .result-strength::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 18px; height: 18px;
+  border-top: 1px solid var(--rs-accent);
+  border-left: 1px solid var(--rs-accent);
+}
+
+.theme-strategist .result-section__num {
+  color: var(--rs-accent);
+}
+
+.theme-strategist .result-cta__btn {
+  background: var(--rs-accent);
+  color: var(--rs-bg);
+}
+.theme-strategist .result-cta__btn:hover {
+  background: #D8BB7E;
+}
+
+.theme-strategist .result-section {
+  border-top-color: rgba(237, 241, 244, 0.08);
+}

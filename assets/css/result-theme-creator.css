@@ -1,0 +1,100 @@
+/* =========================================================
+   AI Creator (AIクリエイター) — Holographic / Rainbow Studio
+   色彩、自由、実験的なアート、光の分散
+   ========================================================= */
+
+.theme-creator {
+  --rs-bg             : #F7F5F0;
+  --rs-card-bg        : #FFFFFF;
+  --rs-card-hover-bg  : #FFFFFF;
+  --rs-video-bg       : #141214;
+
+  --rs-ink            : #141016;
+  --rs-ink-sub        : #4A4050;
+  --rs-ink-mute       : #8A7E94;
+
+  --rs-accent         : #E94B7A;
+  --rs-accent-deep    : #C02A58;
+
+  --rs-line           : rgba(20, 16, 22, 0.12);
+
+  --rs-display        : "Inter", "Noto Sans JP", sans-serif;
+  --rs-display-weight : 900;
+  --rs-display-tracking: -0.035em;
+  --rs-body           : "Noto Sans JP", "Inter", sans-serif;
+  --rs-mono           : "Inter", ui-monospace, monospace;
+
+  background: var(--rs-bg);
+  color: var(--rs-ink);
+}
+
+.theme-creator .result__atmos {
+  background:
+    radial-gradient(ellipse 45% 40% at 15% 10%, rgba(233, 75, 122, 0.28) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 35% at 85% 20%, rgba(255, 190, 70, 0.28) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 75% 85%, rgba(100, 200, 230, 0.30) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 20% 75%, rgba(160, 120, 240, 0.26) 0%, transparent 55%),
+    linear-gradient(180deg, #F7F5F0 0%, #F2F0EB 100%);
+  filter: blur(6px);
+}
+
+.theme-creator .result__atmos::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    conic-gradient(from 200deg at 50% 50%,
+      rgba(233, 75, 122, 0) 0deg,
+      rgba(233, 75, 122, 0.10) 80deg,
+      rgba(100, 200, 230, 0.10) 180deg,
+      rgba(255, 190, 70, 0.10) 280deg,
+      rgba(233, 75, 122, 0) 360deg);
+  mix-blend-mode: overlay;
+  animation: creatorSpin 28s linear infinite;
+}
+@keyframes creatorSpin { to { transform: rotate(360deg); } }
+
+.theme-creator .result-hero__name {
+  background: linear-gradient(120deg,
+    #141016 0%, #E94B7A 25%, #FFA940 45%, #6AB0D1 65%, #A080F0 85%, #141016 100%);
+  background-size: 240% 240%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: creatorGrad 8s ease-in-out infinite;
+}
+@keyframes creatorGrad {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+.theme-creator .result-hero__type-no {
+  border-color: var(--rs-ink);
+}
+
+.theme-creator .result-strength {
+  background: #FFFFFF;
+  box-shadow: 0 8px 40px rgba(20, 16, 22, 0.06);
+}
+.theme-creator .result-strength::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(135deg, #E94B7A, #FFA940, #6AB0D1, #A080F0);
+  opacity: 0;
+  border-radius: inherit;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  transition: opacity 300ms;
+}
+.theme-creator .result-strength:hover::before { opacity: 1; }
+
+.theme-creator .result-cta__btn {
+  background: linear-gradient(120deg, #E94B7A 0%, #FFA940 100%);
+  color: #FFFFFF;
+  box-shadow: 0 12px 36px rgba(233, 75, 122, 0.32);
+}

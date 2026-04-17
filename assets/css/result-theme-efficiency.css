@@ -1,0 +1,84 @@
+/* =========================================================
+   Efficiency Maniac (効率化マニア) — Industrial / Terminal
+   冷たい鋼、端末の緑、機能美、仕組み化
+   ========================================================= */
+
+.theme-efficiency {
+  --rs-bg             : #0B0E10;
+  --rs-card-bg        : #11161A;
+  --rs-card-hover-bg  : #161D22;
+  --rs-video-bg       : #07090B;
+
+  --rs-ink            : #E4EBF0;
+  --rs-ink-sub        : #8FA3AF;
+  --rs-ink-mute       : #5A6B75;
+
+  --rs-accent         : #6EE7B7;
+  --rs-accent-deep    : #34D399;
+
+  --rs-line           : rgba(228, 235, 240, 0.1);
+
+  --rs-display        : "JetBrains Mono", "Inter", ui-monospace, monospace;
+  --rs-display-weight : 700;
+  --rs-display-tracking: -0.03em;
+  --rs-body           : "Noto Sans JP", "Inter", sans-serif;
+  --rs-mono           : "JetBrains Mono", ui-monospace, monospace;
+
+  background: var(--rs-bg);
+  color: var(--rs-ink);
+}
+
+.theme-efficiency .result__atmos {
+  background: linear-gradient(180deg, #0B0E10 0%, #070A0C 100%);
+}
+.theme-efficiency .result__atmos::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(110, 231, 183, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(110, 231, 183, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 20%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 20%, transparent 85%);
+}
+
+.theme-efficiency .result-hero__type-no {
+  border-color: var(--rs-accent);
+  color: var(--rs-accent);
+  font-family: var(--rs-mono);
+}
+
+.theme-efficiency .result-hero__name {
+  font-family: var(--rs-display);
+  letter-spacing: -0.03em;
+}
+.theme-efficiency .result-hero__name::before {
+  content: "> ";
+  color: var(--rs-accent);
+  font-family: var(--rs-mono);
+}
+
+.theme-efficiency .result-strength {
+  background: var(--rs-card-bg);
+  border-left: 2px solid var(--rs-accent);
+}
+.theme-efficiency .result-strength:hover {
+  background: var(--rs-card-hover-bg);
+}
+.theme-efficiency .result-strength__num::before {
+  content: "#";
+  color: var(--rs-accent);
+}
+
+.theme-efficiency .result-trap__num::before { content: "[ "; color: var(--rs-accent); }
+.theme-efficiency .result-trap__num::after  { content: " ]"; color: var(--rs-accent); }
+
+.theme-efficiency .result-cta__btn {
+  background: var(--rs-accent);
+  color: #051115;
+  font-family: var(--rs-mono);
+}
+.theme-efficiency .result-cta__btn:hover {
+  background: #A7F3D0;
+}

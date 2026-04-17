@@ -1,0 +1,79 @@
+/* =========================================================
+   Researcher (リサーチャー) — Library / Deep Forest
+   深緑、書架、象牙、学術的な静けさ
+   ========================================================= */
+
+.theme-researcher {
+  --rs-bg             : #F4EFE5;
+  --rs-card-bg        : #EBE4D3;
+  --rs-card-hover-bg  : #E2DAC3;
+  --rs-video-bg       : #0F1B14;
+
+  --rs-ink            : #1E2A1F;
+  --rs-ink-sub        : #4A5744;
+  --rs-ink-mute       : #7A8676;
+
+  --rs-accent         : #2F5A3E;
+  --rs-accent-deep    : #1E4028;
+
+  --rs-line           : rgba(30, 42, 31, 0.14);
+
+  --rs-display        : "Noto Serif JP", "Hiragino Mincho ProN", serif;
+  --rs-display-weight : 600;
+  --rs-display-tracking: -0.01em;
+  --rs-body           : "Noto Sans JP", "Inter", sans-serif;
+  --rs-mono           : "Inter", ui-monospace, monospace;
+
+  background: var(--rs-bg);
+  color: var(--rs-ink);
+}
+
+.theme-researcher .result__atmos {
+  background-image:
+    radial-gradient(ellipse 70% 60% at 10% 10%, rgba(47, 90, 62, 0.1) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 90% 90%, rgba(30, 42, 31, 0.06) 0%, transparent 55%);
+}
+.theme-researcher .result__atmos::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(30, 42, 31, 0.05) 1px, transparent 1px);
+  background-size: 100% 34px;
+  mask-image: linear-gradient(180deg, transparent 0%, black 20%, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 20%, black 80%, transparent 100%);
+}
+
+.theme-researcher .result-hero__name {
+  font-family: var(--rs-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.theme-researcher .result-hero__name::before {
+  content: "—";
+  display: block;
+  color: var(--rs-accent);
+  font-size: 0.5em;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.theme-researcher .result-hero__eyebrow {
+  color: var(--rs-accent);
+}
+
+.theme-researcher .result-strength {
+  background: var(--rs-card-bg);
+  box-shadow: 0 2px 0 rgba(30, 42, 31, 0.04);
+}
+.theme-researcher .result-strength__title {
+  font-family: var(--rs-display);
+  font-weight: 500;
+}
+
+.theme-researcher .result-cta__btn {
+  background: var(--rs-accent);
+  color: var(--rs-bg);
+  font-family: var(--rs-body);
+  font-weight: 600;
+}

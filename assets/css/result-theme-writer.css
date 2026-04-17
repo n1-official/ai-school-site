@@ -1,0 +1,87 @@
+/* =========================================================
+   Writer (ライティング職人) — Paper & Ink world
+   紙の質感、深い墨のインク、知的で静かな書斎
+   ========================================================= */
+
+.theme-writer {
+  /* Surface */
+  --rs-bg             : #F4EEE1;
+  --rs-card-bg        : #EDE5D4;
+  --rs-card-hover-bg  : #E7DCC5;
+  --rs-video-bg       : #2A1F15;
+
+  /* Ink */
+  --rs-ink            : #2A1F15;
+  --rs-ink-sub        : #5A4B3A;
+  --rs-ink-mute       : #8C7A64;
+
+  /* Accent — warm amber ink */
+  --rs-accent         : #B8873E;
+  --rs-accent-deep    : #8C6029;
+
+  /* Line */
+  --rs-line           : rgba(42, 31, 21, 0.14);
+
+  /* Typography */
+  --rs-display        : "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --rs-display-weight : 700;
+  --rs-display-tracking: -0.01em;
+  --rs-body           : "Noto Sans JP", "Inter", sans-serif;
+  --rs-mono           : "Inter", ui-monospace, monospace;
+
+  background: var(--rs-bg);
+  color: var(--rs-ink);
+}
+
+.theme-writer .result__atmos {
+  background-image:
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(184, 135, 62, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 60% at 80% 90%, rgba(42, 31, 21, 0.05) 0%, transparent 55%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><filter id='p'><feTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.7  0 0 0 0 0.55  0 0 0 0 0.4  0 0 0 0.18 0'/></filter><rect width='100%' height='100%' filter='url(%23p)'/></svg>");
+  background-size: cover, cover, 260px 260px;
+  background-repeat: no-repeat, no-repeat, repeat;
+  opacity: 1;
+  mix-blend-mode: multiply;
+}
+
+.theme-writer .result-hero__name {
+  font-family: var(--rs-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.theme-writer .result-hero__name::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: var(--rs-accent);
+  margin: clamp(28px, 3vw, 40px) auto 0;
+}
+
+.theme-writer .result-strength,
+.theme-writer .result-action {
+  box-shadow: 0 2px 0 rgba(42, 31, 21, 0.04);
+}
+
+/* Ink drop for strength num */
+.theme-writer .result-strength::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 28px;
+  height: 28px;
+  background:
+    radial-gradient(ellipse 60% 80% at 40% 40%, var(--rs-accent) 0%, transparent 65%);
+  border-radius: 50%;
+  filter: blur(1px);
+  opacity: 0.45;
+}
+
+.theme-writer .result-cta__btn {
+  background: var(--rs-ink);
+  color: var(--rs-bg);
+}
+.theme-writer .result-cta__btn:hover {
+  background: var(--rs-accent);
+}

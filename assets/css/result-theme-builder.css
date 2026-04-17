@@ -1,0 +1,97 @@
+/* =========================================================
+   Product Builder (プロダクトビルダー) — Engineering / Builder
+   設計、コード、構造、コーラルで強調
+   ========================================================= */
+
+.theme-builder {
+  --rs-bg             : #0F1419;
+  --rs-card-bg        : #161D24;
+  --rs-card-hover-bg  : #1D252D;
+  --rs-video-bg       : #080D12;
+
+  --rs-ink            : #E8EDF2;
+  --rs-ink-sub        : #9AA7B3;
+  --rs-ink-mute       : #5F6D79;
+
+  --rs-accent         : #FF7849;
+  --rs-accent-deep    : #E35A2C;
+
+  --rs-line           : rgba(232, 237, 242, 0.1);
+
+  --rs-display        : "Inter", "Noto Sans JP", sans-serif;
+  --rs-display-weight : 800;
+  --rs-display-tracking: -0.025em;
+  --rs-body           : "Noto Sans JP", "Inter", sans-serif;
+  --rs-mono           : "JetBrains Mono", ui-monospace, monospace;
+
+  background: var(--rs-bg);
+  color: var(--rs-ink);
+}
+
+.theme-builder .result__atmos {
+  background: linear-gradient(180deg, #0F1419 0%, #080D12 100%);
+}
+.theme-builder .result__atmos::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(255, 120, 73, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 20% 90%, rgba(100, 180, 255, 0.08) 0%, transparent 55%);
+}
+.theme-builder .result__atmos::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(232, 237, 242, 0.03) 1px, transparent 1px);
+  background-size: 100% 60px;
+  mask-image: linear-gradient(180deg, transparent 0%, black 20%, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 20%, black 80%, transparent 100%);
+}
+
+.theme-builder .result-hero__type-no {
+  font-family: var(--rs-mono);
+  border-color: var(--rs-accent);
+  color: var(--rs-accent);
+}
+
+.theme-builder .result-hero__name {
+  letter-spacing: -0.025em;
+}
+
+.theme-builder .result-hero__eyebrow::before { content: "// "; color: var(--rs-accent); }
+
+.theme-builder .result-strength {
+  background: var(--rs-card-bg);
+  position: relative;
+}
+.theme-builder .result-strength::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 40px; height: 2px;
+  background: var(--rs-accent);
+}
+
+.theme-builder .result-strength__num {
+  font-family: var(--rs-mono);
+}
+
+.theme-builder .result-section__num {
+  font-family: var(--rs-mono);
+  color: var(--rs-accent);
+}
+
+.theme-builder .result-cta__btn {
+  background: var(--rs-accent);
+  color: #0B0F14;
+  box-shadow: 0 12px 40px rgba(255, 120, 73, 0.32);
+}
+.theme-builder .result-cta__btn:hover {
+  background: #FF9060;
+}
+
+.theme-builder .result-section {
+  border-top-color: rgba(232, 237, 242, 0.07);
+}

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="robots" content="noindex, nofollow">
+<title>ENUITI AI SCHOOL | AIを使う側へ</title>
+<meta name="description" content="AIを使う側へ。次に動くのはあなたです。エヌイチが設計する、迷いを行動に変える学びの場。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/hero.css">
+<link rel="stylesheet" href="assets/css/diagnosis-intro.css">
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="page-progress" aria-hidden="true"></div>
+
+<!-- Custom Cursor -->
+<div class="cursor" data-cursor aria-hidden="true">
+  <div class="cursor__ring"></div>
+  <div class="cursor__dot"></div>
+  <div class="cursor__label" data-cursor-label></div>
+</div>
+
+<!-- Header -->
+<header class="site-header" data-header>
+  <div class="site-header__inner">
+    <a href="#top" class="site-header__logo" aria-label="ENUITI AI SCHOOL">
+      <img class="site-header__logo-img site-header__logo-img--dark" src="assets/images/logo/カラーロゴ_横_透過.png" alt="">
+      <img class="site-header__logo-img site-header__logo-img--light" src="assets/images/logo/白ロゴ_横_透過.png" alt="">
+      <span class="site-header__logo-text">
+        <span class="site-header__logo-title">ENUITI AI SCHOOL</span>
+        <span class="site-header__logo-sub">エヌイチ エーアイ スクール</span>
+      </span>
+    </a>
+    <nav class="site-header__nav" aria-label="primary">
+      <a href="#diagnosis">診断</a>
+      <a href="#lessons">入門編</a>
+      <a href="#consult" class="site-header__cta">個別相談</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top" data-velocity-target>
+
+  <!-- ============================================
+       Hero - Key Visual
+       ============================================ -->
+  <section class="hero" data-hero>
+    <div class="hero__viewport">
+      <!-- Layered visual: photo + cinematic overlays -->
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__photo-wrap" data-photo-parallax>
+          <img class="hero__photo" src="assets/images/hero/PH018.jpg" alt="" loading="eager" decoding="async">
+        </div>
+        <div class="hero__photo-tint"></div>
+        <div class="hero__photo-mask"></div>
+        <div class="hero__aurora"></div>
+        <div class="hero__grain"></div>
+        <div class="hero__vignette"></div>
+      </div>
+
+      <div class="hero__content">
+        <div class="hero__kicker">
+          <span class="hero__kicker-line"></span>
+          <span class="hero__kicker-text">A SCHOOL FOR THE ONES WHO USE AI</span>
+        </div>
+
+        <h1 class="hero__title" data-split-text>
+          <span class="hero__title-line">AIを使う側へ</span>
+        </h1>
+
+        <p class="hero__lead" data-reveal>
+          次に動くのは、あなたです。
+        </p>
+
+        <div class="hero__meta" data-reveal>
+          <span class="hero__meta-item">Phase 1 Open</span>
+          <span class="hero__meta-divider"></span>
+          <span class="hero__meta-item">2026 Spring</span>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span class="hero__scroll-label">SCROLL</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Message from Founder - YouTube Video
+       ============================================ -->
+  <section class="message" data-message>
+    <div class="message__container">
+      <div class="message__head">
+        <div class="message__eyebrow" data-reveal>A MESSAGE</div>
+        <h2 class="message__title" data-reveal>奥山から、あなたへ。</h2>
+        <p class="message__lead" data-reveal>
+          このサイトで何が起きるのか、<br>
+          なぜ私たちがこれを作ったのか。<br>
+          はじめに、すこしだけ時間をください。
+        </p>
+      </div>
+
+      <div class="message__video" data-video>
+        <div class="message__video-frame">
+          <div class="message__video-thumb" data-video-thumb>
+            <div class="message__video-play" aria-hidden="true">
+              <svg viewBox="0 0 48 48" width="48" height="48">
+                <polygon points="18,14 36,24 18,34" fill="currentColor"/>
+              </svg>
+            </div>
+            <span class="message__video-label">Tap to play</span>
+          </div>
+          <div class="message__video-embed" data-video-embed hidden></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Diagnosis Intro
+       ============================================ -->
+  <section class="diagnosis" id="diagnosis" data-diagnosis>
+
+    <!-- Pinned stage -->
+    <div class="diagnosis__stage" data-diagnosis-stage>
+      <canvas class="diagnosis__particles" data-particles aria-hidden="true"></canvas>
+
+      <div class="diagnosis__layer diagnosis__layer--title" data-layer="title">
+        <span class="diagnosis__eyebrow">Diagnosis</span>
+        <h2 class="diagnosis__title" data-title-split>
+          <span class="dline">あなたの</span>
+          <span class="dline">AIタイプを、</span>
+          <span class="dline">診断する</span>
+        </h2>
+      </div>
+
+      <div class="diagnosis__layer diagnosis__layer--copy" data-layer="copy" aria-hidden="true">
+        <div class="diagnosis__lines">
+          <div class="diagnosis__line" data-line="0">
+            <span>10</span>問、<span>5</span>分。
+          </div>
+          <div class="diagnosis__line" data-line="1">
+            答えるほど、自分が見えてくる。
+          </div>
+          <div class="diagnosis__line" data-line="2">
+            <span>8</span>タイプから、あなたの輪郭を。
+          </div>
+        </div>
+        <div class="diagnosis__rail" aria-hidden="true">
+          <span class="diagnosis__rail-dot" data-rail="0"></span>
+          <span class="diagnosis__rail-dot" data-rail="1"></span>
+          <span class="diagnosis__rail-dot" data-rail="2"></span>
+        </div>
+      </div>
+
+      <div class="diagnosis__layer diagnosis__layer--cta" data-layer="cta">
+        <h2 class="diagnosis__cta-title"><span>さあ、始めよう。</span></h2>
+        <button class="magnetic-btn" type="button" data-magnetic data-cursor-text="Start Diagnosis">
+          <span class="magnetic-btn__fill"></span>
+          <span class="magnetic-btn__label">
+            <span class="magnetic-btn__text">診断を始める</span>
+            <span class="magnetic-btn__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16">
+                <path d="M4 12h16M14 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/>
+              </svg>
+            </span>
+          </span>
+        </button>
+        <p class="diagnosis__note">所要時間 約5分 / 匿名でOK</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spacer / next section placeholder -->
+  <section class="placeholder" id="lessons">
+    <div class="placeholder__inner">
+      <p class="placeholder__label">Next Section</p>
+      <p class="placeholder__title">
+        <span>入門編 Section 1</span>
+        <span class="placeholder__divider" aria-hidden="true">──</span>
+        <span>AI地図</span>
+      </p>
+      <p class="placeholder__note">（このセクション以降は次の実装フェーズで構築）</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="https://unpkg.com/splitting@1.1.0/dist/splitting.min.js" defer></script>
+<script src="https://unpkg.com/three@0.161.0/build/three.min.js" defer></script>
+
+<!-- App -->
+<script src="assets/js/app.js" defer></script>
+<script src="assets/js/hero.js" defer></script>
+<script src="assets/js/diagnosis-intro.js" defer></script>
+
+</body>
+</html>

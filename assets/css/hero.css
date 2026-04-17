@@ -1,0 +1,405 @@
+/* =========================================================
+   hero.css — Hero + Message (Founder video) sections
+   ========================================================= */
+
+/* =======================
+   Hero
+   ======================= */
+.hero {
+  position: relative;
+  background: var(--bg-ink);
+  color: var(--ink-invert);
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.hero__viewport {
+  position: relative;
+  min-height: 100svh;
+  min-height: 100vh;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0;
+}
+
+/* --- Visual layers --- */
+.hero__visual {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  background: #040C11;
+}
+
+/* Photo */
+.hero__photo-wrap {
+  position: absolute;
+  inset: -4%;
+  overflow: hidden;
+  will-change: transform;
+}
+.hero__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 74% 42%;
+  transform: scale(1.08);
+  filter: saturate(0.55) brightness(0.78) contrast(1.05) hue-rotate(-6deg);
+  opacity: 0;
+  animation: photoReveal 1800ms var(--ease-out-expo) 120ms forwards;
+}
+@keyframes photoReveal {
+  from { opacity: 0; filter: saturate(0.2) brightness(0.4) contrast(1.2) blur(16px); transform: scale(1.18); }
+  to   { opacity: 1; filter: saturate(0.55) brightness(0.78) contrast(1.05) hue-rotate(-6deg) blur(0); transform: scale(1.08); }
+}
+
+/* Teal color grading (duotone-ish tint on top of photo) */
+.hero__photo-tint {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 100% 90% at 70% 55%, rgba(46, 155, 161, 0.22) 0%, transparent 55%),
+    linear-gradient(120deg, rgba(4, 12, 17, 0.15) 0%, rgba(4, 12, 17, 0) 55%, rgba(127, 212, 216, 0.10) 100%);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+/* Dark gradient mask to keep left-side text legible */
+.hero__photo-mask {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg,
+      rgba(4, 12, 17, 0.96) 0%,
+      rgba(4, 12, 17, 0.82) 28%,
+      rgba(4, 12, 17, 0.45) 55%,
+      rgba(4, 12, 17, 0.25) 78%,
+      rgba(4, 12, 17, 0.55) 100%),
+    linear-gradient(180deg,
+      rgba(4, 12, 17, 0.10) 0%,
+      transparent 40%,
+      transparent 70%,
+      rgba(4, 12, 17, 0.40) 100%);
+  pointer-events: none;
+}
+
+/* Aurora light beam sweeping subtly */
+.hero__aurora {
+  position: absolute;
+  inset: -10%;
+  background:
+    conic-gradient(from 210deg at 65% 30%,
+      rgba(127, 212, 216, 0) 0deg,
+      rgba(127, 212, 216, 0.10) 40deg,
+      rgba(46, 155, 161, 0.14) 80deg,
+      rgba(127, 212, 216, 0) 130deg);
+  filter: blur(60px) saturate(110%);
+  opacity: 0.9;
+  mix-blend-mode: screen;
+  animation: auroraShift 18s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+@keyframes auroraShift {
+  from { transform: translate3d(-4%, -2%, 0) rotate(0deg); opacity: 0.8; }
+  to   { transform: translate3d(4%, 2%, 0) rotate(6deg); opacity: 1; }
+}
+
+/* Grain: SVG-based fine grain */
+.hero__grain {
+  position: absolute;
+  inset: -2%;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.16 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Vignette */
+.hero__vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 120% 100% at 50% 60%, transparent 55%, rgba(0,0,0,0.55) 100%);
+  pointer-events: none;
+}
+
+/* --- Content --- */
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 0 clamp(24px, 6vw, 80px) clamp(64px, 10vw, 120px);
+  max-width: var(--maxw-page);
+  margin: auto auto 0;
+  width: 100%;
+}
+
+.hero__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: clamp(28px, 4vw, 48px);
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeUp 900ms var(--ease-out-expo) 300ms forwards;
+}
+.hero__kicker-line {
+  width: 44px;
+  height: 1px;
+  background: var(--ink-invert-sub);
+}
+.hero__kicker-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.36em;
+  color: var(--ink-invert-sub);
+  text-transform: uppercase;
+}
+
+.hero__title {
+  font-family: "Noto Sans JP", "Inter", sans-serif;
+  font-weight: 900;
+  font-size: var(--fs-display-xl);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--ink-invert);
+  margin-bottom: clamp(24px, 3vw, 36px);
+}
+.hero__title-line {
+  display: inline-block;
+  overflow: hidden;
+  padding-bottom: 0.12em;
+}
+/* Char-by-char reveal hooks (set by JS) */
+.hero__title .char {
+  display: inline-block;
+  transform: translateY(110%);
+  opacity: 0;
+}
+
+.hero__lead {
+  font-family: "Noto Sans JP", "Inter", sans-serif;
+  font-weight: 500;
+  font-size: clamp(18px, 1.5vw, 26px);
+  letter-spacing: 0.02em;
+  color: var(--ink-invert);
+  max-width: 24ch;
+  margin-bottom: clamp(32px, 5vw, 64px);
+}
+
+.hero__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  color: var(--ink-invert-sub);
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+.hero__meta-divider {
+  width: 24px; height: 1px; background: currentColor; opacity: 0.5;
+}
+
+/* --- Scroll cue --- */
+.hero__scroll {
+  position: absolute;
+  right: clamp(20px, 4vw, 48px);
+  bottom: clamp(24px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink-invert-sub);
+  opacity: 0;
+  animation: fadeUp 900ms var(--ease-out-expo) 1500ms forwards;
+}
+.hero__scroll-label {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.36em;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+.hero__scroll-line {
+  width: 1px;
+  height: 56px;
+  background: currentColor;
+  position: relative;
+  overflow: hidden;
+}
+.hero__scroll-line::after {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: var(--ink-invert);
+  animation: scrollPulse 2.2s var(--ease-in-out-quart) infinite;
+}
+@keyframes scrollPulse {
+  0%   { top: -30%; }
+  100% { top: 100%; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =======================
+   Message (Founder video)
+   ======================= */
+.message {
+  position: relative;
+  background: var(--bg-ink);
+  color: var(--ink-invert);
+  padding-block: clamp(96px, 12vw, 180px);
+  overflow: hidden;
+}
+.message::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(46, 155, 161, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.message__container {
+  position: relative;
+  max-width: var(--maxw-content);
+  margin: 0 auto;
+  padding-inline: clamp(24px, 6vw, 72px);
+}
+
+.message__head {
+  text-align: left;
+  margin-bottom: clamp(48px, 6vw, 80px);
+  max-width: 720px;
+}
+.message__eyebrow {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.36em;
+  color: var(--brand-light);
+  text-transform: uppercase;
+  margin-bottom: var(--s-4);
+}
+.message__title {
+  font-family: "Noto Sans JP", "Inter", sans-serif;
+  font-weight: 800;
+  font-size: clamp(32px, 4vw, 64px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink-invert);
+  margin-bottom: var(--s-5);
+}
+.message__lead {
+  font-family: "Noto Sans JP", "Inter", sans-serif;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 2;
+  color: var(--ink-invert-sub);
+  font-weight: 500;
+}
+
+.message__video {
+  position: relative;
+}
+.message__video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  background: #000;
+  border: 1px solid var(--line-invert);
+  overflow: hidden;
+  clip-path: inset(0 50% 0 50%);
+  transition: clip-path 900ms var(--ease-in-out-quart);
+  cursor: pointer;
+}
+.message__video.is-in .message__video-frame {
+  clip-path: inset(0 0 0 0);
+}
+
+.message__video-thumb {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(ellipse 80% 80% at 50% 50%, rgba(46, 155, 161, 0.3) 0%, transparent 65%),
+    linear-gradient(180deg, #07131B, #030A10);
+}
+.message__video-play {
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ink-invert);
+  display: grid;
+  place-items: center;
+  color: var(--ink-invert);
+  transition:
+    background 420ms var(--ease-out-expo),
+    color 420ms var(--ease-out-expo),
+    transform 420ms var(--ease-out-expo);
+  position: relative;
+  isolation: isolate;
+}
+.message__video-play::after {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border: 1px solid var(--line-invert);
+  border-radius: 50%;
+  animation: ripple 2.8s ease-in-out infinite;
+}
+@keyframes ripple {
+  0%   { transform: scale(1); opacity: 0.9; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+.message__video-thumb:hover .message__video-play {
+  background: var(--accent-warm);
+  color: var(--ink-invert);
+  border-color: var(--accent-warm);
+  transform: scale(1.05);
+}
+
+.message__video-label {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  color: var(--ink-invert-sub);
+  text-transform: uppercase;
+}
+
+.message__video-embed {
+  position: absolute;
+  inset: 0;
+}
+.message__video-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .hero__content {
+    padding-bottom: 80px;
+  }
+  .hero__scroll { display: none; }
+  .hero__photo { object-position: 62% 42%; }
+  .hero__photo-mask {
+    background:
+      linear-gradient(180deg,
+        rgba(4, 12, 17, 0.78) 0%,
+        rgba(4, 12, 17, 0.55) 40%,
+        rgba(4, 12, 17, 0.78) 100%);
+  }
+}

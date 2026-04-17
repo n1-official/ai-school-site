@@ -1,0 +1,105 @@
+/* =========================================================
+   SNS Operator (SNS運用プロデューサー) — Neon / Vibrant
+   発信の熱、ネオン、グラデーション、エネルギー
+   ========================================================= */
+
+.theme-sns {
+  /* Surface */
+  --rs-bg             : #0E0714;
+  --rs-card-bg        : #15091F;
+  --rs-card-hover-bg  : #1E0D2E;
+  --rs-video-bg       : #0A040F;
+
+  /* Ink */
+  --rs-ink            : #F5EDFB;
+  --rs-ink-sub        : #B99FCC;
+  --rs-ink-mute       : #7A638B;
+
+  /* Accent — vivid magenta / electric */
+  --rs-accent         : #F05CA0;
+  --rs-accent-deep    : #B630A6;
+
+  /* Line */
+  --rs-line           : rgba(245, 237, 251, 0.12);
+
+  /* Typography */
+  --rs-display        : "Inter", "Noto Sans JP", sans-serif;
+  --rs-display-weight : 800;
+  --rs-display-tracking: -0.03em;
+  --rs-body           : "Noto Sans JP", "Inter", sans-serif;
+  --rs-mono           : "JetBrains Mono", "Inter", ui-monospace, monospace;
+
+  background: var(--rs-bg);
+  color: var(--rs-ink);
+}
+
+.theme-sns .result__atmos {
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 15%, rgba(240, 92, 160, 0.30) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 80% 45%, rgba(120, 60, 220, 0.28) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 60% at 60% 90%, rgba(64, 180, 255, 0.22) 0%, transparent 55%),
+    linear-gradient(160deg, #0E0714 0%, #160924 40%, #0A040F 100%);
+  opacity: 1;
+}
+
+/* Neon aurora layer */
+.theme-sns .result__atmos::after {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  background:
+    conic-gradient(from 200deg at 60% 30%,
+      rgba(240, 92, 160, 0) 0deg,
+      rgba(240, 92, 160, 0.22) 60deg,
+      rgba(120, 60, 220, 0.22) 130deg,
+      rgba(240, 92, 160, 0) 220deg);
+  filter: blur(90px) saturate(180%);
+  mix-blend-mode: screen;
+  animation: snsAurora 16s ease-in-out infinite alternate;
+}
+@keyframes snsAurora {
+  from { transform: translate(-4%, -2%) rotate(-4deg); }
+  to   { transform: translate(4%, 2%) rotate(4deg); }
+}
+
+.theme-sns .result-hero__name {
+  background: linear-gradient(120deg, #F5EDFB 0%, #F05CA0 40%, #7E4FE8 80%, #F5EDFB 100%);
+  background-size: 260% 260%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: snsGradient 9s ease-in-out infinite;
+  letter-spacing: -0.03em;
+}
+@keyframes snsGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+.theme-sns .result-hero__eyebrow {
+  text-shadow: 0 0 16px rgba(240, 92, 160, 0.6);
+}
+
+.theme-sns .result-strength {
+  background: linear-gradient(180deg, rgba(21, 9, 31, 0.72), rgba(30, 13, 46, 0.72));
+  backdrop-filter: blur(12px);
+  border-color: rgba(240, 92, 160, 0.18);
+}
+.theme-sns .result-strength:hover {
+  border-color: var(--rs-accent);
+  box-shadow: 0 20px 60px rgba(240, 92, 160, 0.2);
+}
+
+.theme-sns .result-cta__btn {
+  background: linear-gradient(120deg, #F05CA0 0%, #7E4FE8 100%);
+  color: #FFFFFF;
+  box-shadow: 0 10px 40px rgba(240, 92, 160, 0.45);
+}
+.theme-sns .result-cta__btn:hover {
+  box-shadow: 0 16px 60px rgba(240, 92, 160, 0.7);
+}
+
+.theme-sns .result-section {
+  border-top-color: rgba(245, 237, 251, 0.1);
+}
