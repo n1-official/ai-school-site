@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="assets/css/components.css">
 <link rel="stylesheet" href="assets/css/hero.css">
 <link rel="stylesheet" href="assets/css/diagnosis-intro.css">
+<link rel="stylesheet" href="assets/css/lesson-quiz.css">
 </head>
 <body>
 
@@ -183,16 +184,493 @@
     </div>
   </section>
 
-  <!-- Spacer / next section placeholder -->
-  <section class="placeholder" id="lessons">
-    <div class="placeholder__inner">
-      <p class="placeholder__label">Next Section</p>
-      <p class="placeholder__title">
-        <span>入門編 Section 1</span>
-        <span class="placeholder__divider" aria-hidden="true">──</span>
-        <span>AI地図</span>
+  <!-- ============================================
+       入門編 進捗トラッカー（Diagnosis直後・Lessons直上）
+       ============================================ -->
+  <section class="lessons-progress" id="lessons-progress" aria-label="入門編 進捗">
+    <div class="lessons-progress__inner">
+      <div class="lessons-progress__head">
+        <span class="lessons-progress__label">入門編</span>
+        <span class="lessons-progress__sublabel">全5セクション</span>
+      </div>
+      <div class="lessons-progress__steps" role="list">
+
+        <div class="lessons-progress__step" data-progress-step="section-1" role="listitem">
+          <a class="lessons-progress__step-link" href="#lessons" data-cursor-text="Section 1">
+            <span class="lessons-progress__step-num">01</span>
+            <span class="lessons-progress__step-body">
+              <span class="lessons-progress__step-title">AI地図</span>
+              <span class="lessons-progress__step-score" data-step-score="section-1"></span>
+            </span>
+            <span class="lessons-progress__step-icon" data-step-icon="section-1" aria-hidden="true">
+              <!-- lock / check injected by JS -->
+            </span>
+          </a>
+        </div>
+
+        <div class="lessons-progress__connector" aria-hidden="true"></div>
+
+        <div class="lessons-progress__step" data-progress-step="section-2" role="listitem">
+          <a class="lessons-progress__step-link" href="#section-2-anchor" data-cursor-text="Section 2">
+            <span class="lessons-progress__step-num">02</span>
+            <span class="lessons-progress__step-body">
+              <span class="lessons-progress__step-title">ツール使い分け</span>
+              <span class="lessons-progress__step-score" data-step-score="section-2"></span>
+            </span>
+            <span class="lessons-progress__step-icon" data-step-icon="section-2" aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div class="lessons-progress__connector" aria-hidden="true"></div>
+
+        <div class="lessons-progress__step" data-progress-step="section-3" role="listitem">
+          <a class="lessons-progress__step-link" href="#section-3-anchor" data-cursor-text="Section 3">
+            <span class="lessons-progress__step-num">03</span>
+            <span class="lessons-progress__step-body">
+              <span class="lessons-progress__step-title">プロンプトの型</span>
+              <span class="lessons-progress__step-score" data-step-score="section-3"></span>
+            </span>
+            <span class="lessons-progress__step-icon" data-step-icon="section-3" aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div class="lessons-progress__connector" aria-hidden="true"></div>
+
+        <div class="lessons-progress__step" data-progress-step="section-4" role="listitem">
+          <a class="lessons-progress__step-link" href="#section-4-anchor" data-cursor-text="Section 4">
+            <span class="lessons-progress__step-num">04</span>
+            <span class="lessons-progress__step-body">
+              <span class="lessons-progress__step-title">日常と仕事</span>
+              <span class="lessons-progress__step-score" data-step-score="section-4"></span>
+            </span>
+            <span class="lessons-progress__step-icon" data-step-icon="section-4" aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div class="lessons-progress__connector" aria-hidden="true"></div>
+
+        <div class="lessons-progress__step" data-progress-step="section-5" role="listitem">
+          <a class="lessons-progress__step-link" href="#section-5-anchor" data-cursor-text="Section 5">
+            <span class="lessons-progress__step-num">05</span>
+            <span class="lessons-progress__step-body">
+              <span class="lessons-progress__step-title">AIの未来</span>
+              <span class="lessons-progress__step-score" data-step-score="section-5"></span>
+            </span>
+            <span class="lessons-progress__step-icon" data-step-icon="section-5" aria-hidden="true"></span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       入門編 — 5 Sections + 理解度チェック
+       ============================================ -->
+
+  <!-- Section 1: AI地図 -->
+  <section class="lesson-section" id="lessons" data-section="section-1">
+    <div class="lesson-section-badge" aria-hidden="true">
+      <svg viewBox="0 0 12 12" width="10" height="10"><polyline points="2,6 5,9 10,3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      クリア済み
+    </div>
+    <div class="lesson-section__inner">
+      <div class="lesson-section__eyebrow" data-reveal>
+        <span class="lesson-section__eyebrow-num">01</span>
+        <span class="lesson-section__eyebrow-line" aria-hidden="true"></span>
+        Introductory
+      </div>
+      <h2 class="lesson-section__title" data-reveal>AI地図</h2>
+      <p class="lesson-section__lead" data-reveal>
+        今のAIに「できること」を俯瞰する。テキスト・画像・動画・音声・コード・業務自動化——あなたが思っている以上に、AIはすでに広い領域で動いている。
       </p>
-      <p class="placeholder__note">（このセクション以降は次の実装フェーズで構築）</p>
+
+      <div class="lesson-section__body">
+        <div class="lesson-placeholder-grid" data-reveal>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">✍️</div>
+            <div class="lesson-placeholder-card__title">テキスト生成・要約・翻訳</div>
+            <div class="lesson-placeholder-card__text">文章作成・議事録要約・多言語翻訳をAIが瞬時にこなす。ChatGPT・Claude・Geminiが代表例。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">🎨</div>
+            <div class="lesson-placeholder-card__title">画像生成・編集</div>
+            <div class="lesson-placeholder-card__text">テキストから高品質な画像を秒単位で生成。Midjourney・Stable Diffusion・DALL·Eが牽引。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">🎬</div>
+            <div class="lesson-placeholder-card__title">動画・音声生成</div>
+            <div class="lesson-placeholder-card__text">Soraなど動画生成AIが急拡大。音楽・声のクローンも実用レベルに達している。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">💻</div>
+            <div class="lesson-placeholder-card__title">コード生成・レビュー</div>
+            <div class="lesson-placeholder-card__text">GitHub Copilotは開発者の生産性を55%向上させると報告。ノーコードの壁がなくなりつつある。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">🔍</div>
+            <div class="lesson-placeholder-card__title">リサーチ・分析</div>
+            <div class="lesson-placeholder-card__text">Perplexityが検索を革新。数百ページの資料をAIが数秒で読み解き、要点を抽出する。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">⚙️</div>
+            <div class="lesson-placeholder-card__title">業務自動化・エージェント</div>
+            <div class="lesson-placeholder-card__text">メール返信・スケジュール調整・データ入力をAIが自律実行。「AIエージェント」が実用化段階へ。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 理解度チェック -->
+      <div class="lesson-quiz" data-lesson-quiz="section-1" aria-label="Section 1 理解度チェック">
+        <div class="lesson-quiz__head">
+          <span class="lesson-quiz__label">理解度チェック</span>
+          <span class="lesson-quiz__count">全3問</span>
+        </div>
+        <div class="lesson-quiz__questions" data-questions></div>
+        <div class="lesson-quiz__footer">
+          <span class="lesson-quiz__answered-count">0 / 3 回答済み</span>
+          <button class="lesson-quiz__submit" type="button" data-submit disabled>採点する</button>
+        </div>
+        <div class="lesson-quiz__result" data-result hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: ツール使い分け -->
+  <div id="section-2-anchor" style="scroll-margin-top:72px"></div>
+  <section class="lesson-section" data-section="section-2" data-locked="true">
+    <div class="lesson-lock" data-lock aria-hidden="true">
+      <div class="lesson-lock__inner">
+        <span class="lesson-lock__icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+            <rect x="5" y="11" width="14" height="10" rx="1"/>
+            <path d="M8 11V7a4 4 0 1 1 8 0v4"/>
+          </svg>
+        </span>
+        <span class="lesson-lock__label">Section 2 ロック中</span>
+        <p class="lesson-lock__note">前のセクションのクイズを満点でクリアすると解放されます</p>
+      </div>
+    </div>
+    <div class="lesson-section-badge" aria-hidden="true">
+      <svg viewBox="0 0 12 12" width="10" height="10"><polyline points="2,6 5,9 10,3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      クリア済み
+    </div>
+    <div class="lesson-section__inner">
+      <div class="lesson-section__eyebrow" data-reveal>
+        <span class="lesson-section__eyebrow-num">02</span>
+        <span class="lesson-section__eyebrow-line" aria-hidden="true"></span>
+        Introductory
+      </div>
+      <h2 class="lesson-section__title" data-reveal>主要AIツールの使い分け</h2>
+      <p class="lesson-section__lead" data-reveal>
+        ChatGPT・Claude・Gemini・Perplexity・Midjourney——どれも「AI」だが、得意分野はまったく異なる。「用途×ツール」の最適解を知ると、AIの使い方が一気に変わる。
+      </p>
+
+      <div class="lesson-section__body">
+        <div class="lesson-placeholder-grid" data-reveal>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">💬</div>
+            <div class="lesson-placeholder-card__title">ChatGPT（OpenAI）</div>
+            <div class="lesson-placeholder-card__text">最も普及している汎用AI。文章・コード・分析・画像生成（DALL·E）まで幅広くこなす。無料版あり。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">🤖</div>
+            <div class="lesson-placeholder-card__title">Claude（Anthropic）</div>
+            <div class="lesson-placeholder-card__text">長文処理・コード生成・論理的な回答に強み。最大200,000トークンのコンテキストウィンドウ。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">🔎</div>
+            <div class="lesson-placeholder-card__title">Perplexity</div>
+            <div class="lesson-placeholder-card__text">リアルタイム検索特化型AI。ウェブ情報を引用付きで回答。最新情報の調査に最適。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">🌐</div>
+            <div class="lesson-placeholder-card__title">Gemini（Google）</div>
+            <div class="lesson-placeholder-card__text">GoogleサービスとのシームレスなAI統合。GmailやGドライブと連携して業務効率化を実現。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">🎨</div>
+            <div class="lesson-placeholder-card__title">Midjourney / Stable Diffusion</div>
+            <div class="lesson-placeholder-card__text">画像生成特化型AI。テキストプロンプトから驚異的な品質のビジュアルを秒単位で生成。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">📊</div>
+            <div class="lesson-placeholder-card__title">無料 vs 有料の違い</div>
+            <div class="lesson-placeholder-card__text">有料版では最新モデルへのアクセス・生成速度・1日の利用上限が大幅に向上。月$20前後が相場。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lesson-quiz" data-lesson-quiz="section-2" aria-label="Section 2 理解度チェック">
+        <div class="lesson-quiz__head">
+          <span class="lesson-quiz__label">理解度チェック</span>
+          <span class="lesson-quiz__count">全3問</span>
+        </div>
+        <div class="lesson-quiz__questions" data-questions></div>
+        <div class="lesson-quiz__footer">
+          <span class="lesson-quiz__answered-count">0 / 3 回答済み</span>
+          <button class="lesson-quiz__submit" type="button" data-submit disabled>採点する</button>
+        </div>
+        <div class="lesson-quiz__result" data-result hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: プロンプトの型 -->
+  <div id="section-3-anchor" style="scroll-margin-top:72px"></div>
+  <section class="lesson-section" data-section="section-3" data-locked="true">
+    <div class="lesson-lock" data-lock aria-hidden="true">
+      <div class="lesson-lock__inner">
+        <span class="lesson-lock__icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+            <rect x="5" y="11" width="14" height="10" rx="1"/>
+            <path d="M8 11V7a4 4 0 1 1 8 0v4"/>
+          </svg>
+        </span>
+        <span class="lesson-lock__label">Section 3 ロック中</span>
+        <p class="lesson-lock__note">前のセクションのクイズを満点でクリアすると解放されます</p>
+      </div>
+    </div>
+    <div class="lesson-section-badge" aria-hidden="true">
+      <svg viewBox="0 0 12 12" width="10" height="10"><polyline points="2,6 5,9 10,3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      クリア済み
+    </div>
+    <div class="lesson-section__inner">
+      <div class="lesson-section__eyebrow" data-reveal>
+        <span class="lesson-section__eyebrow-num">03</span>
+        <span class="lesson-section__eyebrow-line" aria-hidden="true"></span>
+        Introductory
+      </div>
+      <h2 class="lesson-section__title" data-reveal>プロンプトの型</h2>
+      <p class="lesson-section__lead" data-reveal>
+        同じAIでも、質問の仕方で出力品質は10倍変わる。「良いプロンプト」には再現性のある型がある。3つの型を知れば、あなたのAI活用は今日から変わる。
+      </p>
+
+      <div class="lesson-section__body">
+        <div class="lesson-placeholder-grid" data-reveal>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">🎭</div>
+            <div class="lesson-placeholder-card__title">型 1: 役割設定（Role）</div>
+            <div class="lesson-placeholder-card__text">「あなたはマーケターとして…」とAIに役割を与える。その専門家の視点・語彙・思考で回答させられる。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">📐</div>
+            <div class="lesson-placeholder-card__title">型 2: 具体的な条件指定</div>
+            <div class="lesson-placeholder-card__text">「500字以内で」「箇条書きで3つ」「初心者向けに」——条件が明確なほど、AIの回答精度は上がる。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">💡</div>
+            <div class="lesson-placeholder-card__title">型 3: 例示（Few-shot）</div>
+            <div class="lesson-placeholder-card__text">「このように→」と出力サンプルを見せる。AIがパターンを学習し、期待通りのフォーマットで出力する。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">✅</div>
+            <div class="lesson-placeholder-card__title">良いプロンプト vs 悪いプロンプト</div>
+            <div class="lesson-placeholder-card__text">「メールを書いて」（悪）→「30代女性向けの新商品案内メールを200字で、柔らかい文体で」（良）</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">📋</div>
+            <div class="lesson-placeholder-card__title">コピペOKテンプレ集</div>
+            <div class="lesson-placeholder-card__text">要約・提案・添削・アイデア出し・リサーチの5パターン雛形を提供。すぐに使えるプロンプト集。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">🔄</div>
+            <div class="lesson-placeholder-card__title">反復改善（Iteration）</div>
+            <div class="lesson-placeholder-card__text">一回で完璧を目指さない。「もっと短く」「もっとフォーマルに」と会話を続けるほど精度が上がる。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lesson-quiz" data-lesson-quiz="section-3" aria-label="Section 3 理解度チェック">
+        <div class="lesson-quiz__head">
+          <span class="lesson-quiz__label">理解度チェック</span>
+          <span class="lesson-quiz__count">全3問</span>
+        </div>
+        <div class="lesson-quiz__questions" data-questions></div>
+        <div class="lesson-quiz__footer">
+          <span class="lesson-quiz__answered-count">0 / 3 回答済み</span>
+          <button class="lesson-quiz__submit" type="button" data-submit disabled>採点する</button>
+        </div>
+        <div class="lesson-quiz__result" data-result hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: 日常と仕事 -->
+  <div id="section-4-anchor" style="scroll-margin-top:72px"></div>
+  <section class="lesson-section" data-section="section-4" data-locked="true">
+    <div class="lesson-lock" data-lock aria-hidden="true">
+      <div class="lesson-lock__inner">
+        <span class="lesson-lock__icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+            <rect x="5" y="11" width="14" height="10" rx="1"/>
+            <path d="M8 11V7a4 4 0 1 1 8 0v4"/>
+          </svg>
+        </span>
+        <span class="lesson-lock__label">Section 4 ロック中</span>
+        <p class="lesson-lock__note">前のセクションのクイズを満点でクリアすると解放されます</p>
+      </div>
+    </div>
+    <div class="lesson-section-badge" aria-hidden="true">
+      <svg viewBox="0 0 12 12" width="10" height="10"><polyline points="2,6 5,9 10,3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      クリア済み
+    </div>
+    <div class="lesson-section__inner">
+      <div class="lesson-section__eyebrow" data-reveal>
+        <span class="lesson-section__eyebrow-num">04</span>
+        <span class="lesson-section__eyebrow-line" aria-hidden="true"></span>
+        Introductory
+      </div>
+      <h2 class="lesson-section__title" data-reveal>AIで変わる日常と仕事</h2>
+      <p class="lesson-section__lead" data-reveal>
+        「自分には関係ない」と思っていた人ほど、気づいたときには差がついている。仕事・日常・副業での実際の活用シーンを一気に見渡す。
+      </p>
+
+      <div class="lesson-section__body">
+        <div class="lesson-placeholder-grid" data-reveal>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">📧</div>
+            <div class="lesson-placeholder-card__title">仕事：メール・文書作成</div>
+            <div class="lesson-placeholder-card__text">メール下書き・議事録要約・提案書ドラフト。1時間かかった作業が5分になる体験が急拡大中。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">📊</div>
+            <div class="lesson-placeholder-card__title">仕事：データ分析・リサーチ</div>
+            <div class="lesson-placeholder-card__text">競合調査・市場分析・数値の解釈。AIが仮説を立て、必要な情報を一気に収集・整理する。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">🍳</div>
+            <div class="lesson-placeholder-card__title">日常：レシピ・旅行・学習</div>
+            <div class="lesson-placeholder-card__text">「冷蔵庫の食材でレシピを」「4泊5日の沖縄旅行を計画して」——AIが個人秘書として機能する。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">💰</div>
+            <div class="lesson-placeholder-card__title">副業：ライティング・デザイン</div>
+            <div class="lesson-placeholder-card__text">記事作成・SNS投稿・バナーデザインをAIがサポート。少ない工数で複数案件をこなす副業スタイルが急増。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">📱</div>
+            <div class="lesson-placeholder-card__title">副業：SNS運用代行</div>
+            <div class="lesson-placeholder-card__text">投稿文・ハッシュタグ・コメント返信をAI生成。1人で5アカウントを管理するフリーランサーも出現。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">🎓</div>
+            <div class="lesson-placeholder-card__title">学習・自己成長</div>
+            <div class="lesson-placeholder-card__text">英語学習・資格勉強・スキルアップ。AIが個別チューターとして24時間対応。学習効率が劇的に変わる。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lesson-quiz" data-lesson-quiz="section-4" aria-label="Section 4 理解度チェック">
+        <div class="lesson-quiz__head">
+          <span class="lesson-quiz__label">理解度チェック</span>
+          <span class="lesson-quiz__count">全3問</span>
+        </div>
+        <div class="lesson-quiz__questions" data-questions></div>
+        <div class="lesson-quiz__footer">
+          <span class="lesson-quiz__answered-count">0 / 3 回答済み</span>
+          <button class="lesson-quiz__submit" type="button" data-submit disabled>採点する</button>
+        </div>
+        <div class="lesson-quiz__result" data-result hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: AIの未来 -->
+  <div id="section-5-anchor" style="scroll-margin-top:72px"></div>
+  <section class="lesson-section" data-section="section-5" data-locked="true">
+    <div class="lesson-lock" data-lock aria-hidden="true">
+      <div class="lesson-lock__inner">
+        <span class="lesson-lock__icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+            <rect x="5" y="11" width="14" height="10" rx="1"/>
+            <path d="M8 11V7a4 4 0 1 1 8 0v4"/>
+          </svg>
+        </span>
+        <span class="lesson-lock__label">Section 5 ロック中</span>
+        <p class="lesson-lock__note">前のセクションのクイズを満点でクリアすると解放されます</p>
+      </div>
+    </div>
+    <div class="lesson-section-badge" aria-hidden="true">
+      <svg viewBox="0 0 12 12" width="10" height="10"><polyline points="2,6 5,9 10,3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      クリア済み
+    </div>
+    <div class="lesson-section__inner">
+      <div class="lesson-section__eyebrow" data-reveal>
+        <span class="lesson-section__eyebrow-num">05</span>
+        <span class="lesson-section__eyebrow-line" aria-hidden="true"></span>
+        Introductory
+      </div>
+      <h2 class="lesson-section__title" data-reveal>AIがこれから変える世界</h2>
+      <p class="lesson-section__lead" data-reveal>
+        AIの進化には終わりがない。「使う側」に留まり続けるために、これから何が起きるかを知っておく。未来は怖くない——知っている人にとっては、チャンスだ。
+      </p>
+
+      <div class="lesson-section__body">
+        <div class="lesson-placeholder-grid" data-reveal>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">🤖</div>
+            <div class="lesson-placeholder-card__title">AIエージェントの台頭</div>
+            <div class="lesson-placeholder-card__text">「ゴールを与えるだけ」でAIが自律的にタスクを実行。メール返信・調査・予約を自動化する時代が来る。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">⚡</div>
+            <div class="lesson-placeholder-card__title">進化のスピード</div>
+            <div class="lesson-placeholder-card__text">GPT-4登場から2年で性能は10倍以上に。2026年以降もこのペースは続く。「様子見」が最大のリスク。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">🔀</div>
+            <div class="lesson-placeholder-card__title">「使う側」vs「使われる側」</div>
+            <div class="lesson-placeholder-card__text">AIに仕事を奪われるのではなく、AIを使いこなす人に仕事が集まる時代。分岐点は今、ここにある。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">🌍</div>
+            <div class="lesson-placeholder-card__title">変わる職種・産業</div>
+            <div class="lesson-placeholder-card__text">マッキンゼーの試算では2030年までに全業務の30%がAIで自動化可能。変化はすでに始まっている。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">📈</div>
+            <div class="lesson-placeholder-card__title">学び続ける意義</div>
+            <div class="lesson-placeholder-card__text">正解は「全部マスターする」ではなく「触り続ける」。週1時間のAI活用習慣が、1年後の差になる。</div>
+          </div>
+          <div class="lesson-placeholder-card">
+            <div class="lesson-placeholder-card__icon">🚀</div>
+            <div class="lesson-placeholder-card__title">あなたの次の一手</div>
+            <div class="lesson-placeholder-card__text">ここまで学んだあなたには「もっと深く」の意欲があるはず。個別相談でその一手を一緒に設計しよう。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lesson-quiz" data-lesson-quiz="section-5" aria-label="Section 5 理解度チェック">
+        <div class="lesson-quiz__head">
+          <span class="lesson-quiz__label">理解度チェック</span>
+          <span class="lesson-quiz__count">全3問</span>
+        </div>
+        <div class="lesson-quiz__questions" data-questions></div>
+        <div class="lesson-quiz__footer">
+          <span class="lesson-quiz__answered-count">0 / 3 回答済み</span>
+          <button class="lesson-quiz__submit" type="button" data-submit disabled>採点する</button>
+        </div>
+        <div class="lesson-quiz__result" data-result hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA 2 -->
+  <section class="placeholder" id="consult" style="text-align:center;padding:clamp(80px,12vw,160px) clamp(20px,6vw,80px)">
+    <div style="max-width:640px;margin:0 auto">
+      <p style="font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:28px">Next Step</p>
+      <h2 style="font-size:var(--fs-h2);font-weight:800;color:var(--ink);margin-bottom:24px;letter-spacing:-0.01em">個別相談で、<br>あなたの一手を設計する</h2>
+      <p style="font-size:var(--fs-lead);color:var(--ink-sub);line-height:1.85;margin-bottom:48px">ここまで学んだあなたには、次に具体的な行動が必要です。<br>LINE から個別相談を申し込んでください。</p>
+      <a href="#" class="magnetic-btn magnetic-btn--light" style="margin:0 auto">
+        <span class="magnetic-btn__fill"></span>
+        <span class="magnetic-btn__label">
+          <span class="magnetic-btn__text">LINE で個別相談を申し込む</span>
+          <span class="magnetic-btn__arrow">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 12h16M14 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></svg>
+          </span>
+        </span>
+      </a>
     </div>
   </section>
 
@@ -209,6 +687,7 @@
 <script src="assets/js/app.js" defer></script>
 <script src="assets/js/hero.js" defer></script>
 <script src="assets/js/diagnosis-intro.js" defer></script>
+<script src="assets/js/lesson-quiz.js" defer></script>
 
 </body>
 </html>
